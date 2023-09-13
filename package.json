@@ -1,0 +1,22 @@
+{
+  "name": "open-external-browser",
+  "version": "0.0.1",
+  "description": "open external browser where in-app",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyesungoh/open-external-browser.git"
+  },
+  "author": "hyesungoh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyesungoh/open-external-browser/issues"
+  },
+  "homepage": "https://github.com/hyesungoh/open-external-browser#readme",
+  "packageManager": "yarn@3.6.3",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
