@@ -1,18 +1,7 @@
 {
-  "name": "open-external-browser-monorepo",
+  "name": "open-external-browser-base",
   "version": "0.0.1",
   "description": "open external browser where in-app",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hyesungoh/open-external-browser.git"
-  },
-  "author": "hyesungoh",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hyesungoh/open-external-browser/issues"
-  },
-  "homepage": "https://github.com/hyesungoh/open-external-browser#readme",
   "packageManager": "yarn@3.6.3",
   "workspaces": [
     "open-external-browser",
@@ -20,7 +9,7 @@
   ],
   "scripts": {
     "o": "yarn workspace open-external-browser",
-    "build": "tsup"
+    "publish": "./.scripts/publish.sh"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.0",
@@ -34,7 +23,6 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "prettier": "^3.0.3",
-    "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   }
 }

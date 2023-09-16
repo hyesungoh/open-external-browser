@@ -3072,9 +3072,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open-external-browser-monorepo@workspace:.":
+"open-external-browser-base@workspace:.":
   version: 0.0.0-use.local
-  resolution: "open-external-browser-monorepo@workspace:."
+  resolution: "open-external-browser-base@workspace:."
   dependencies:
     "@typescript-eslint/eslint-plugin": ^6.7.0
     "@typescript-eslint/parser": ^6.7.0
@@ -3087,7 +3087,6 @@ __metadata:
     eslint-plugin-simple-import-sort: ^10.0.0
     eslint-plugin-unused-imports: ^3.0.0
     prettier: ^3.0.3
-    tsup: ^7.2.0
     typescript: ^5.2.2
   languageName: unknown
   linkType: soft
@@ -3100,6 +3099,8 @@ __metadata:
     "@types/react-dom": ^18.2.7
     react: ^18.2.0
     react-dom: ^18.2.0
+    tsup: ^7.2.0
+    typescript: ^5.2.2
   peerDependencies:
     react: ^16.8.0  || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
