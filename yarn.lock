@@ -3101,6 +3101,7 @@ __metadata:
     react-dom: ^18.2.0
     tsup: ^7.2.0
     typescript: ^5.2.2
+    user-agent-data-types: ^0.4.2
   peerDependencies:
     react: ^16.8.0  || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
@@ -4135,6 +4136,13 @@ __metadata:
   dependencies:
     punycode: ^2.1.0
   checksum: 7167432de6817fe8e9e0c9684f1d2de2bb688c94388f7569f7dbdb1587c9f4ca2a77962f134ec90be0cc4d004c939ff0d05acc9f34a0db39a3c797dada262633
+  languageName: node
+  linkType: hard
+
+"user-agent-data-types@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "user-agent-data-types@npm:0.4.2"
+  checksum: 0c448b820b70eb99f64ce611ddda70ff3a5af4bfe0b02e4fcae72bb8377710593358657413399daf583622c63a50e024b11d8947d1136ddeca01d6b066f963ad
   languageName: node
   linkType: hard
 

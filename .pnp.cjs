@@ -3713,7 +3713,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ce385e0849d2e635fc3f73ebb9c676b37674f5a16800fb42a5b77688685d9335f349596655a6c1bdbd42d8af04f3af3395bc534727575acd0cd9054284ce7196#npm:18.2.0"],\
             ["tsup", "virtual:ce385e0849d2e635fc3f73ebb9c676b37674f5a16800fb42a5b77688685d9335f349596655a6c1bdbd42d8af04f3af3395bc534727575acd0cd9054284ce7196#npm:7.2.0"],\
-            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"]\
+            ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
+            ["user-agent-data-types", "npm:0.4.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -4871,6 +4872,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["uri-js", "npm:4.4.1"],\
             ["punycode", "npm:2.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["user-agent-data-types", [\
+        ["npm:0.4.2", {\
+          "packageLocation": "./.yarn/cache/user-agent-data-types-npm-0.4.2-8d17790c53-0c448b820b.zip/node_modules/user-agent-data-types/",\
+          "packageDependencies": [\
+            ["user-agent-data-types", "npm:0.4.2"]\
           ],\
           "linkType": "HARD"\
         }]\
