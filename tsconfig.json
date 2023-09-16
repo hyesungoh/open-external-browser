@@ -2,11 +2,13 @@
   "compilerOptions": {
     "target": "es2016",
     "jsx": "react",
-    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": false
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
 }
