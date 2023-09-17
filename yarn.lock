@@ -3424,6 +3424,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"nextjs@workspace:examples/nextjs":
+  version: 0.0.0-use.local
+  resolution: "nextjs@workspace:examples/nextjs"
+  dependencies:
+    "@types/node": 20.6.2
+    "@types/react": 18.2.21
+    "@types/react-dom": 18.2.7
+    eslint: 8.49.0
+    eslint-config-next: 13.4.19
+    next: 13.4.19
+    open-external-browser: "workspace:^"
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.2.2
+  languageName: unknown
+  linkType: soft
+
 "node-gyp@npm:latest":
   version: 9.4.0
   resolution: "node-gyp@npm:9.4.0"
