@@ -4,7 +4,7 @@ open external browser where in-app
 
 <div align='center'>
 
-https://github.com/hyesungoh/open-external-browser/assets/26461307/9aa6aa59-6f1f-4b5f-a504-e0bb2020ccc8
+https://github.com/hyesungoh/open-external-browser/assets/26461307/633d6b8c-2c53-4b7a-9e6f-92dde27a2e1a
 
 </div>
 
@@ -51,6 +51,8 @@ function Foo() {
 }
 ```
 
+<br />
+
 ## API
 
 ### where
@@ -65,5 +67,5 @@ In-app environment to open an external browser
 
 url to open in external browser
 
-- `default (undefined)` - current url (location.href)
-- `string` - url you want
+* `default (undefined)` - current url (location.href)
+* `string` - url you want
