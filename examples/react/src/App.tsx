@@ -1,4 +1,4 @@
-import { useOpenExternalBrowser } from 'open-external-browser';
+import { getUA, useOpenExternalBrowser } from 'open-external-browser';
 
 function App() {
   useOpenExternalBrowser({ where: 'all' });
@@ -6,6 +6,7 @@ function App() {
   return (
     <main>
       <h1>open external browser</h1>
+      <p>{getUA()}</p>
     </main>
   );
 }
