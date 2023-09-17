@@ -1,7 +1,7 @@
 import { useOpenExternalBrowser } from 'open-external-browser';
 
 function App() {
-  useOpenExternalBrowser({ where: 'kakaotalk' });
+  useOpenExternalBrowser({ where: 'all' });
 
   return (
     <main>
