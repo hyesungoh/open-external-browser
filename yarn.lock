@@ -3418,7 +3418,7 @@ __metadata:
     eslint-config-next: 13.4.19
     next: 13.4.19
     open-external-browser: "workspace:^"
-    react: "workspace:*"
+    react: 18.2.0
     react-dom: 18.2.0
     typescript: 5.2.2
   languageName: unknown
@@ -3898,7 +3898,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:18.2.0, react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -3907,7 +3907,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@workspace:*, react@workspace:examples/react":
+"react@workspace:examples/react":
   version: 0.0.0-use.local
   resolution: "react@workspace:examples/react"
   dependencies:
