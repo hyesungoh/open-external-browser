@@ -1,5 +1,5 @@
 import { getUA } from './agent';
-import { AGENT_MAP, HREF_MAP, IN_APPS, type Where } from './constants';
+import { AGENT_MAP, HREF_MAP, IN_APPS, type InApp, type Where } from './constants';
 
 interface Props {
   /**
@@ -15,6 +15,12 @@ interface Props {
    * @example 'https://github.com'
    */
   to?: string;
+  /**
+   * @description Callback function when the in-app browser is opened
+   * @param where - The environment where the in-app browser is opened
+   * @returns `void`
+   */
+  onOpen?: (where: InApp) => void;
 }
 
 /**
@@ -23,8 +29,9 @@ interface Props {
  * @example openExternalBrowser({ where: 'all', to: 'https://github.com' })
  * @example openExternalBrowser({ where: ['kakao', 'line'] })
  * @example openExternalBrowser({ where: 'kakao' })
+ * @example openExternalBrowser({ where: 'kakao', onOpen: (where) => console.log(where) })
  */
-export const openExternalBrowser = ({ where, to }: Props) => {
+export const openExternalBrowser = ({ where, to, onOpen }: Props) => {
   const ua = getUA();
   const isAll = where === 'all';
   const isWhereArray = Array.isArray(where);
@@ -33,6 +40,7 @@ export const openExternalBrowser = ({ where, to }: Props) => {
   if (isAll) {
     return IN_APPS.forEach((inApp) => {
       if (ua.match(AGENT_MAP[inApp])) {
+        onOpen?.(inApp);
         location.href = HREF_MAP[inApp](toUrl);
       }
     });
@@ -41,12 +49,14 @@ export const openExternalBrowser = ({ where, to }: Props) => {
   if (isWhereArray) {
     return where.forEach((inApp) => {
       if (ua.match(AGENT_MAP[inApp])) {
+        onOpen?.(inApp);
         location.href = HREF_MAP[inApp](toUrl);
       }
     });
   }
 
   if (ua.match(AGENT_MAP[where])) {
+    onOpen?.(where);
     location.href = HREF_MAP[where](toUrl);
   }
 };
