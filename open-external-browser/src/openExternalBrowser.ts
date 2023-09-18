@@ -1,6 +1,8 @@
 import { getUA } from './agent';
 import { AGENT_MAP, HREF_MAP, IN_APPS, type InApp, type Where } from './constants';
 
+export type OpenEventHandler = (where: InApp) => void;
+
 interface Props {
   /**
    * @description Decide in what environment to open it
@@ -20,7 +22,7 @@ interface Props {
    * @param where - The environment where the in-app browser is opened
    * @returns `void`
    */
-  onOpen?: (where: InApp) => void;
+  onOpen?: OpenEventHandler;
 }
 
 /**

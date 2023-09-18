@@ -1,23 +1,8 @@
 import { useEffect } from 'react';
 
-import { type Where } from './constants';
 import { openExternalBrowser } from './openExternalBrowser';
 
-interface Props {
-  /**
-   * @description Decide in what environment to open it
-   * @example 'all' - Open in all environments
-   * @example ['kakao', 'line'] - Open in ['kakao', 'line']
-   * @example 'kakao' - Open in 'kakao'
-   */
-  where: Where;
-  /**
-   * @description URL to open
-   * @default location.href
-   * @example 'https://github.com'
-   */
-  to?: string;
-}
+type Props = Parameters<typeof openExternalBrowser>[0];
 
 /**
  * @description Open the URL in the environment specified by where
@@ -25,9 +10,11 @@ interface Props {
  * @example useOpenExternalBrowser({ where: 'all', to: 'https://github.com' })
  * @example useOpenExternalBrowser({ where: ['kakao', 'line'] })
  * @example useOpenExternalBrowser({ where: 'kakao' })
+ * @example useOpenExternalBrowser({ where: 'kakao', onOpen: (where) => console.log(where) })
+ * @example useOpenExternalBrowser({ where: 'kakao', to: 'https://github.com', onOpen: (where) => console.log(where) })
  */
-export function useOpenExternalBrowser({ where, to }: Props) {
+export function useOpenExternalBrowser({ where, to, onOpen }: Props) {
   useEffect(() => {
-    openExternalBrowser({ where, to });
-  }, [to, where]);
+    openExternalBrowser({ where, to, onOpen });
+  }, [where, to, onOpen]);
 }
