@@ -30,6 +30,7 @@ function Bar() {
     openExternalBrowser({where: 'all'})
     // openExternalBrowser({ where: 'all', to: 'https:www.some-url-you-want.com' });
     // openExternalBrowser({ where: 'kakaotalk' });
+    // openExternalBrowser({ where: 'kakaotalk', onOpen: (where) => console.log(where) });
   }
 
   return <button onClick={onClick}>open</button>
@@ -46,6 +47,7 @@ function Foo() {
   // same API with openExternalBrowser
   // useOpenExternalBrowser({ where: 'all', to: 'https:www.some-url-you-want.com' });
   // useOpenExternalBrowser({ where: 'kakaotalk' });
+  // useOpenExternalBrowser({ where: 'kakaotalk', onOpen: (where) => console.log(where) });
 
   return <div />;
 }
@@ -60,8 +62,23 @@ function Foo() {
 In-app environment to open an external browser
 
 * `all` - open when below in-apps
-* `kakaotalk` - open when kakaotalk in-app
-* `line` - open when line in-app
+* `string (in-app)`
+  + `kakaotalk` - open when kakaotalk in-app
+  + `line` - open when line in
+* `string[] (in-apps)`
+  + `['kakaotalk', 'line']` - open when kakaotalk or line in-app
+
+#### example
+
+```tsx
+openExternalBrowser({ where: 'all' });
+openExternalBrowser({ where: 'kakaotalk' });
+openExternalBrowser({ where: ['kakaotalk', 'line'] });
+
+useOpenExternalBrowser({ where: 'all' });
+useOpenExternalBrowser({ where: 'kakaotalk' });
+useOpenExternalBrowser({ where: ['kakaotalk', 'line'] });
+```
 
 ### to
 
@@ -69,3 +86,43 @@ url to open in external browser
 
 * `default (undefined)` - current url (location.href)
 * `string` - url you want
+
+#### example
+
+```tsx
+openExternalBrowser({ where: 'all', to: 'https://www.your-url.com' });
+
+useOpenExternalBrowser({ where: 'all', to: 'https://www.your-url.com' });
+```
+
+### onOpen
+
+callback function when open external browser
+
+* `default (undefined)` - do nothing
+* `function ((where: InApp) => void)` - callback function
+
+#### example
+
+```tsx
+openExternalBrowser({ where: 'all', onOpen: (where) => console.log(where) });
+
+useOpenExternalBrowser({ where: 'all', onOpen: (where) => console.log(where) });
+```
+
+```tsx
+import { useOpenExternalBrowser, type OpenEventHandler } from 'open-external-browser';
+
+function Foo() {
+  const [state, setState] = useState<string>('');
+
+  const onOpen: OpenEventHandler = (where) => {
+    setState(where);
+    trackEvent(where);
+  }
+
+  useOpenExternalBrowser({ where: 'all', onOpen: onOpen });
+
+  return <span>{state}</span>
+}
+```
