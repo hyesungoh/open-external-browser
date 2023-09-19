@@ -27,7 +27,7 @@ import { openExternalBrowser } from 'open-external-browser';
 
 function Bar() {
   const onClick = () => {
-    openExternalBrowser({where: 'all'})
+    openExternalBrowser({ where: 'all' })
     // openExternalBrowser({ where: 'all', to: 'https:www.some-url-you-want.com' });
     // openExternalBrowser({ where: 'kakaotalk' });
     // openExternalBrowser({ where: 'kakaotalk', onOpen: (where) => console.log(where) });
@@ -64,7 +64,7 @@ In-app environment to open an external browser
 * `all` - open when below in-apps
 * `string (in-app)`
   + `kakaotalk` - open when kakaotalk in-app
-  + `line` - open when line in
+  + `line` - open when line in-app
 * `string[] (in-apps)`
   + `['kakaotalk', 'line']` - open when kakaotalk or line in-app
 
