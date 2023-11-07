@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { openExternalBrowser } from './openExternalBrowser';
 
@@ -14,7 +14,18 @@ type Props = Parameters<typeof openExternalBrowser>[0];
  * @example useOpenExternalBrowser({ where: 'kakao', to: 'https://github.com', onOpen: (where) => console.log(where) })
  */
 export function useOpenExternalBrowser({ where, to, onOpen }: Props) {
+  const isOpened = useRef(false);
+
   useEffect(() => {
-    openExternalBrowser({ where, to, onOpen });
+    if (isOpened.current) return;
+
+    openExternalBrowser({
+      where,
+      to,
+      onOpen: (passedWhere) => {
+        isOpened.current = true;
+        onOpen?.(passedWhere);
+      },
+    });
   }, [where, to, onOpen]);
 }
